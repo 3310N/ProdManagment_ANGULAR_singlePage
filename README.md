@@ -1,27 +1,50 @@
-# FirstApp
+# Student Payment Management Application
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.3.5.
+## Partie 1: Développer et Tester la partie Backend avec Spring.
 
-## Development server
+**Objectif :**
+Développer une application qui permet de gérer le paiement des étudiants. Chaque étudiant peut effectuer plusieurs paiements.
+- Chaque étudiant est défini par son : id, firstName, lastName, email, sa filière, sa photo.
+- Chaque Paiement est défini par son id, son code, sa date, son type (CASH, CHECK, TRANSFER), son statut (CREATED, VALIDATED, REJECTED), file (fichier PDF représentant le reçu de paiement).
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+**Étapes à suivre :**
+1. Créer les entités JPA.
+2. Créer les interfaces JPARepository basées sur Spring Data.
+3. Générer des données aléatoires concernant quelques étudiants et pour chaque étudiant des paiements.
+4. Créer un service web RESTful (ResController) qui expose les fonctionnalités suivantes :
+  - Consulter tous les paiements.
+  - Consulter un paiement en connaissant son ID.
+  - Consulter les paiements d'un type donné.
+  - Consulter les paiements d'un statut donné.
+  - Consulter les paiements d'un étudiant donné.
+  - Consulter les paiements d'une filière donnée.
+  - Consulter tous les étudiants.
+  - Consulter les étudiants d'une filière donnée.
+  - Consulter un étudiant en connaissant son code.
+  - Effectuer un nouveau paiement avec les données et le reçu de paiement au format PDF.
+  - Mettre à jour le statut d'un paiement.
+  - Consulter le reçu d'un paiement (fichier PDF).
+5. Tester le backend en utilisant un client REST (Postman) et avec Swagger UI.
+6. Faire un refactoring du code en utilisant la couche service, les DTOs et les Mappers.
 
-## Code scaffolding
+## Partie 2: Développer la partie frontend en utilisant Angular avec Angular Material pour la partie design.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+1. Créer un projet Angular.
+2. Intégrer Angular Material.
+3. Créer une page template contenant une barre d'outils avec un menu et un menu latéral.
+4. Créer les différents composants de l'application.
+5. Créer un système d'authentification simple qui oblige l'utilisateur à s'authentifier avant d'accéder à l'application. Dans un premier temps, les utilisateurs et les rôles qui ont le droit d'accéder à l'application sont stockés de manière statique dans le service d'authentification. Protéger les routes par un Guard d'authentification et un Guard pour les autorisations.
+6. Créer les composants fonctionnels de l'application :
+- Afficher les paiements avec une pagination frontend.
+  - Afficher et chercher les étudiants.
+  - Afficher le tableau de bord d'un étudiant (informations et paiements).
+  - Ajouter un nouveau paiement en téléchargeant le reçu de paiement.
+  - Consulter les détails d'un paiement.
+  - Mettre à jour le statut d'un paiement.
 
-## Build
+## Partie 3: Sécurité avec Spring Security et Json Web Token.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+- Sécuriser le backend.
+- Sécuriser le frontend.
 
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+Ce projet est un exercice de développement full-stack utilisant Java Spring Boot pour le backend, Angular pour le frontend, et intégrant des mesures de sécurité pour une application robuste.
